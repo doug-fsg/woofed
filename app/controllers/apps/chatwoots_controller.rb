@@ -39,4 +39,34 @@ class Apps::ChatwootsController < ActionController::Base
   def load_chatwoot
     @chatwoot = Apps::Chatwoot.find_by(embedding_token: params['token'])
   end
+
+  def set_responsible_agent
+    # Verifica se o parâmetro responsible_agent_id está presente
+    unless params[:responsible_agent_id].present?
+      render json: { error: 'O ID do agente responsável é obrigatório' }, status: :unprocessable_entity
+      return
+    end
+  
+    # Verifica se o agente responsável existe
+    user = User.find_by(id: params[:responsible_agent_id])
+    unless user.present?
+      render json: { error: 'Agente responsável não encontrado' }, status: :not_found
+      return
+    end
+  
+    # Define o ID do agente responsável no objeto Apps::Chatwoot
+    @chatwoot.responsible_agent_id = user.id
+  
+    # Salva o objeto no banco de dados
+    if @chatwoot.save
+      render json: { message: 'Agente responsável definido com sucesso' }, status: :ok
+    else
+      render json: { error: 'Erro ao definir o agente responsável' }, status: :unprocessable_entity
+    end
+  end
+  
+  
+
+
+
 end
