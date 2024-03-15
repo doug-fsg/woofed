@@ -5,10 +5,31 @@
       <p class="typography-sub-text-m-lh200 text-dark-gray-palette-p1"><%= deal.name %></p>
       <div class="w-full h-0.5 bg-light-palette-p3">
       </div>
+
+
       <div class="flex items-center justify-between gap-2">
         <p class="typography-sub-text-m-lh150 text-dark-gray-palette-p3 flex-1"><%= deal.contact.full_name %></p>
         <%= render partial: 'accounts/pipelines/deal_event', locals: {event: deal.next_event_planned}  if deal.next_event_planned? %>
       </div>
+
+
+<% if deal.contact %>
+  <div class="flex items-center justify-between gap-2">
+    <div class="bg-blue-200 p-2 rounded inline-flex" style="background-color: #d1eaff; padding: 2px; height: fit-content;">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="#033663">
+        <path fill-rule="evenodd" d="M10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+        <path fill-rule="evenodd" d="M14 8a4 4 0 11-8 0 4 4 0 018 0zM3 16c0-3.5 7-5 7-5s7 1.5 7 5v1H3v-1z" clip-rule="evenodd" />
+      </svg>
+      <p class="typography-sub-text-m-lh150 text-dark-gray-palette-p3"><%= deal.contact.custom_attributes["atendente"] %></p>
+    </div>
+  </div>
+<% end %>
+
+
+
+
+
+      
     </div>
   <% end %>
 <% end %>
