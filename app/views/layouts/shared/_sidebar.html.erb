@@ -1,3 +1,4 @@
+<% if ENV['SIDEBAR_VISIBLE'] == 'true' %>
 <div data-controller="element-expanded" aria-expanded="true" class="group ease-in duration-300 h-screen border-r-2 border-light-palette-p3 relative p-4 space-y-4 w-[72px] aria-expanded:w-60" id="element-expand" data-element-expanded-target='sidebar'>
   <div class="flex items-center flex-wrap justify-between">
     <%= link_to(root_path()) do %>
@@ -47,3 +48,4 @@
     </li>
   </ul>
 </div>
+<% end %>

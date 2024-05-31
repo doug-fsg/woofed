@@ -2,6 +2,10 @@ import { Controller } from "stimulus";
 import { Dropdown } from "flowbite";
 
 export default class extends Controller {
+
+
+
+
   static targets = ["status", "form", "links", "button"];
   connect() {
     this.setAllLinksAriaSelectedFalse();
@@ -17,6 +21,7 @@ export default class extends Controller {
     this.updateUrl(filterValue);
     this.submit(filterValue);
     this.dropdownHide()
+  
   }
   updateUrl(filterValue) {
     const newUrl = `?filter_status_deal=${filterValue}`;
@@ -44,6 +49,7 @@ export default class extends Controller {
   }
   checkParamsUrl() {
     var currentUrl = new URL(window.location.href);
+
     var params = new URLSearchParams(currentUrl.search);
     if (
       params.get("filter_status_deal") &&

@@ -3,7 +3,7 @@ pt-BR:
     layouts:
       shared:
         navbar_pipe:
-          all_open_deals: 'Todos negócios em aberto'
+          all_open_deals: 'Meus negócios'
           all_won_deals: 'Todos negócios ganhos'
           all_lost_deals: 'Todos negócios perdidos'
           all_deals: 'Todos negócios'
