@@ -1,3 +1,20 @@
+<% iddd = current_user.id %>
+<% id_user = iddd % 10 %>
+<% cores = {
+  1 => { nome: 'red', tom: 50 },
+  2 => { nome: 'blue', tom: 100 },
+  3 => { nome: 'green', tom: 200 },
+  4 => { nome: 'yellow', tom: 300 },
+  5 => { nome: 'purple', tom: 400 },
+  6 => { nome: '#9403fc', tom: 400 },
+  7 => { nome: '#0367fc', tom: 300 },
+  8 => { nome: '#b01541', tom: 200 },
+  9 => { nome: '#0acf76', tom: 100 },
+  0 => { nome: '#e8760c', tom: 50 }
+} %>
+<% cor_escolhida = cores[id_user][:nome] %>
+<% tom_escolhido = cores[id_user][:tom] %>
+
 <%= content_tag :li, id: dom_id(deal), 'data-id': deal.id, 'data-account-id': Current.account.id do %>
   <%= turbo_stream_from deal %>
   <%= link_to account_deal_path(Current.account, deal.id), data: {turbo: false} do %>
@@ -9,6 +26,28 @@
         <p class="typography-sub-text-m-lh150 text-dark-gray-palette-p3 flex-1"><%= deal.contact.full_name %></p>
         <%= render partial: 'accounts/pipelines/deal_event', locals: {event: deal.next_event_planned}  if deal.next_event_planned? %>
       </div>
+
+
+<% if deal.contact %>
+  <div class="flex items-center justify-between gap-2">
+    <div class="bg-blue-200 p-2 rounded inline-flex" style="background-color: #d1eaff; padding: 2px; height: fit-content;">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="<%= cor_escolhida %>">
+        <path fill-rule="evenodd" d="M10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+        <path fill-rule="evenodd" d="M14 8a4 4 0 11-8 0 4 4 0 018 0zM3 16c0-3.5 7-5 7-5s7 1.5 7 5v1H3v-1z" clip-rule="evenodd" />
+      </svg>
+      <script>
+  console.log(<%= raw(deal.to_json) %>);
+</script>
+      <!-- 
+      <p class="typography-sub-text-m-lh150 text-dark-gray-palette-p3"><%= current_user.full_name %></p>
+       -->
+      <p class="typography-sub-text-m-lh150 text-dark-gray-palette-p3"><%= deal.contact.custom_attributes["atendente"] %></p>
+
+    </div>
+  </div>
+
+<% end %>
+
     </div>
   <% end %>
 <% end %>
