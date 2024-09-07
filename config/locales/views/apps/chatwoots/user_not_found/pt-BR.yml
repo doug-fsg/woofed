@@ -4,5 +4,5 @@ pt-BR:
       chatwoots:
         user_not_found:
           user_not_found: "Usuário chatwoot não encontrado!"
-          description: "O usuário de email <strong class='text-dark-gray-palette-p3'>%{user_email}</strong> não está cadastrado no Woofed. Para o funcionamento correto, crie o usuário pelo menu <strong class='text-dark-gray-palette-p3'>Empresa</strong> no Woofed CRM."
+          description: "O usuário de email <strong class='text-dark-gray-palette-p3'>%{user_email}</strong> não está cadastrado no Kanban do ManyTalks. Para o funcionamento correto, crie o usuário pelo menu <strong class='text-dark-gray-palette-p3'>Empresa</strong> no ManyTalks."
           register_user: "Cadastrar usuário"

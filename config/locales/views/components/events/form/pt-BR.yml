@@ -9,6 +9,6 @@ pt-BR:
             note: Nota
           messages:
             phone_number_required: "É necessário que o contato %{full_name} tenha um número de telefone."
-            chatwoot_account_required: "É necessário que o usuário %{email} esteja cadastrado no Chatwoot."
+            chatwoot_account_required: "É necessário que o usuário %{email} esteja cadastrado no ManyTalks."
             send_message: "Enviar mensagem via %{app}"
 
