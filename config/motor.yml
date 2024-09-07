@@ -1,7 +1,18 @@
 ---
 engine_version: 0.4.20
-file_version: 2024-07-31 12:31:23.886169000 Z
+file_version: 2024-09-06 22:37:30.705637000 Z
 resources:
+- name: deal
+  preferences:
+    columns:
+    - column_type: string
+      virtual: true
+      format: {}
+      validators: []
+      display_name: status
+      default_value: 
+      name: status
+  updated_at: 2024-09-06 19:37:30.705637000 -03:00
 - name: user
   preferences:
     columns:
@@ -20,7 +31,22 @@ configs:
   value:
   - name: "⭐ Star on GitHub"
     path: https://github.com/motor-admin/motor-admin-rails
-  updated_at: 2024-07-31 08:49:39.461731000 -03:00
+  updated_at: 2024-09-06 15:21:42.306308000 -03:00
+- key: resources.deal.columns.order
+  value:
+  - id
+  - account_id
+  - contact_id
+  - stage_id
+  - pipeline_id
+  - name
+  - status
+  - custom_attributes
+  - position
+  - updated_at
+  - created_at
+  - status
+  updated_at: 2024-09-06 19:35:25.310086000 -03:00
 queries: []
 dashboards: []
 forms: []
@@ -31,4 +57,4 @@ api_configs:
   url: "/"
   preferences: {}
   description: 
-  updated_at: 2024-07-31 08:49:39.481225000 -03:00
+  updated_at: 2024-09-06 15:21:42.341974000 -03:00

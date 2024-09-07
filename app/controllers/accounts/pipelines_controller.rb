@@ -17,14 +17,26 @@ class Accounts::PipelinesController < InternalController
   end
 
   # GET /pipelines/1 or /pipelines/1.json
-  def show
-    @pipelines = Pipeline.all
-    @status = if params[:filter_status_deal].present?
-                params[:filter_status_deal]
-              else
-                'open'
-              end
-  end
+# Ajuste no controlador (exemplo: accounts/pipelines_controller.rb)
+def show
+  @pipeline = Pipeline.find(params[:id])
+  
+  # Certifique-se de que @pipelines está sendo carregado corretamente
+  @pipelines = Pipeline.all
+
+  # Filtros para o status e o nome do negócio
+  @deals = Deal.where(pipeline_id: @pipeline.id)
+  @deals = @deals.where(status: params[:filter_status_deal]) if params[:filter_status_deal].present?
+  #@deals = @deals.where(name: params[:filter_name_deal]) if params[:filter_name_deal].present?
+  #@deals = @deals.where("custom_attributes ->> 'atendente' = ?", params[:filter_name_deal]).present?
+  @deals = @deals.where("custom_attributes ->> 'id_atendente' = ?", params[:filter_name_deal]) if params[:filter_name_deal].present?
+
+
+  # Outros códigos existentes
+end
+
+
+  
 
   # GET /pipelines/new
   def new
