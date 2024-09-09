@@ -53,7 +53,7 @@ class Apps::Chatwoot < ApplicationRecord
     dashboard_apps_response = Faraday.post(
       "#{chatwoot_endpoint_url}/api/v1/accounts/#{chatwoot_account_id}/dashboard_apps",
       {
-        "title": "WoofedCRM",
+        "title": "ManyTalks",
         "content":[{"type": "frame","url": woofedcrm_embedding_url}]
       }.to_json,
       {'api_access_token': "#{chatwoot_user_token}", 'Content-Type': 'application/json'}

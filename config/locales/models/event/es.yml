@@ -12,7 +12,7 @@ es:
           note: Nota
           evolution_api_message: 'Mensaje de WhatsApp'
           activity: Actividad
-          chatwoot_message: 'Mensaje de Chatwoot'
+          chatwoot_message: 'Mensaje de ManyTalks'
         kind: Tipo
         content: Descripción
         scheduled_at: Programar

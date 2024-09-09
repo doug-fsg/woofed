@@ -3,5 +3,5 @@ pt-BR:
     components:
       select_search:
         select: 'Selecione %{model}'
-        search: 'Buscar %{model}'
+        search: 'Buscar '
         new: 'Novo %{model}'

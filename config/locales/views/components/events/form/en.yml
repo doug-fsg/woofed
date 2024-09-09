@@ -9,5 +9,5 @@ en:
             note: Note
           messages:
             phone_number_required: "The contact %{full_name} must have a phone number."
-            chatwoot_account_required: "The user %{email} must be registered in Chatwoot."
+            chatwoot_account_required: "The user %{email} must be registered in ManyTalks."
             send_message: "Send %{app} message"

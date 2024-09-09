@@ -12,7 +12,7 @@ en:
           note: Note
           evolution_api_message: 'WhatsApp Message'
           activity: Activity
-          chatwoot_message: 'Chatwoot Message'
+          chatwoot_message: 'ManyTalks Message'
         kind: Type
         content: Description
         scheduled_at: Schedule
